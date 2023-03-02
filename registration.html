@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="reg.css">
+	<title>Student Registration Form</title>
+</head>
+<body>
+    <nav class="navlist">
+        <ul>
+            <li><hd><div class="logo-header "> 
+                <a href="/Home/"><img src="file:///home/sct/Desktop/my project/logo.png" alt="MODERN COLLEGE TECHNOLOGY" /></a> </hd></div>
+            <li><a href="">HOME</a></li>
+            <li><a href="">CONTACT US</a></li>
+            <li><a href="">EMAIL</a></li>
+            <li><a href="">FACULTY</a></li>
+        </ul>
+        <div class="header">
+            <ul>
+                <li><a href="file:///home/sct/Desktop/my%20project/ourhistory.html">About MCT</a></li>
+                <li><a href="file:///home/sct/Desktop/my project/Staffs.html">Staffs</a></li>
+                <li><a href="/EXAMINATION/" target="_blank">Examination</a></li>
+                <li><a href="/Library/About-Us" target="blank">Library</a></li>
+                <li><a href="/IQAC/" target="_blank">IQAC</a></li>
+            </ul>
+    </nav>
+<div class="mainbox">
+<h1>Student Registration Form</h1>
+
+<form onsubmit="myfunc(event)">
+	<p>
+		<label for="name">Name:</label>
+		<input type="text" name="name" id="name" />
+	</p>
+	<p>
+		<label for="email">Email:</label>
+		<input type="email" name="email" id="email" />
+	</p>
+	<p>
+		<label for="dob">Date of Birth:</label>
+		<input type="date" name="dob" id="dob" />
+	</p>
+	<p>
+		<label for="gender">Gender:</label>
+		<input type="radio" id="Gender" name="gender" required /> Male
+		<input type="radio" name="gender" required /> Female
+	</p>
+	<p>
+		<label for="address">Address:</label>
+		<input type="text" name="address" id="address" />
+	</p>
+	<p>
+		<label for="phone">Phone:</label>
+		<input type="phone" name="phone" id="phone" />
+	</p>
+	<p>
+		<input type="submit" value="Submit" />
+	</p>
+</form>
+<script type="text/javascript">
+	function myfunc(event){
+		event.preventDefault();
+
+		var name = document.getElementById("name").value;
+		var email = document.getElementById("email").value;
+		var dob = document.getElementById("dob").value;
+		var temp_Gender = document.getElementById("Gender");
+		var address = document.getElementById("address").value;
+		var phone = document.getElementById("phone").value;
+
+		temp_Gender.checked ? Gender = "Male" : gender ="Female";
+
+		localStorage.setItem('Is_name', name);
+		localStorage.setItem('Is_email', email);
+		localStorage.setItem('Is_dob', dob);
+		localStorage.setItem('Is_Gender', Gender);
+		localStorage.setItem('Is_address', address);
+		localStorage.setItem('Is_phone', phone);
+	}
+</script>
+</div>
+<footer class="site-footer" style="display: block; height: 86px;">
+
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p>This website is maintained by Centre for Computing Modern Collage<br>© Modern Collage Tuti. All Rights Reserved.</p>
+				   
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+</html>
